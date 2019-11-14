@@ -8,6 +8,8 @@
         xs12
         mb-5
       >
+        <h1>Images</h1>
+        <p></p>
         <v-carousel
           dark
           height="600">
