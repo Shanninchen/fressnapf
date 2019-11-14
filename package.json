@@ -50,16 +50,6 @@
       "plugin:vue/essential",
       "@vue/airbnb"
     ],
-    "rules": {
-      "graphql/template-strings": [
-        "error",
-        {
-          "env": "literal",
-          "projectName": "app",
-          "schemaJsonFilepath": "node_modules/.temp/graphql/schema.json"
-        }
-      ]
-    },
     "parserOptions": {
       "parser": "babel-eslint"
     },
