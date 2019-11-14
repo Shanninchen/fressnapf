@@ -36,6 +36,27 @@
               <img src="../assets/smoke@2x.png" class="smoke animation-paused">
             </div>
           </v-carousel-item>
+          <v-carousel-item
+          >
+            <div class="animation-container">
+              <div class="animate-btn-container">
+                <v-btn
+                  depressed
+                  large
+                  @click="addBarAnimation"
+                  light
+                  ripple
+                  id="animation-btn2"
+                >
+                  Animieren
+                </v-btn>
+              </div>
+              <img src="../assets/background@2x.jpg" class="slide-background">
+              <div class="animation-bar-container">
+                <img src="../assets/bars@2x.png" class="bars">
+              </div>
+            </div>
+          </v-carousel-item>
         </v-carousel>
       </v-flex>
     </v-layout>
@@ -47,6 +68,10 @@ export default {
   methods: {
     removeAnimationPause() {
       document.getElementsByClassName('smoke')[0].classList.remove('animation-paused');
+      document.getElementById('animation-btn1').classList.add('v-btn--disabled');
+    },
+    addBarAnimation() {
+      document.getElementsByClassName('animation-bar-container')[0].classList.add('animated');
       document.getElementById('animation-btn1').classList.add('v-btn--disabled');
     },
   },
@@ -92,11 +117,36 @@ export default {
     animation-play-state: paused;
   }
 
+  .slide-background {
+    width: 1024px;
+    height: 768px;
+  }
+
   .animate-btn-container {
     z-index: 100;
 
     .v-btn {
       margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .animation-bar-container {
+    position: absolute;
+    width: 0;
+    height: 313px;
+    top: 370px;
+    left: 214px;
+    overflow: hidden;
+    transition: width 1s ease-in;
+
+    img {
+      width: 489px;
+      display: block;
+    }
+
+    &.animated {
+      width: 498px;
     }
   }
 
